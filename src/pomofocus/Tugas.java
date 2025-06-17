@@ -29,6 +29,7 @@ public class Tugas extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         PanelAtas = new javax.swing.JPanel();
         navbar1 = new pomofocus.Navbar();
+        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +50,9 @@ public class Tugas extends javax.swing.JFrame {
             .addGap(0, 120, Short.MAX_VALUE)
         );
 
+        jScrollPane1.setBackground(new java.awt.Color(248, 244, 225));
+        jScrollPane1.setForeground(new java.awt.Color(248, 244, 225));
+
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
         MainPanelLayout.setHorizontalGroup(
@@ -57,12 +61,15 @@ public class Tugas extends javax.swing.JFrame {
             .addGroup(MainPanelLayout.createSequentialGroup()
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
                 .addComponent(PanelAtas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -118,6 +125,7 @@ public class Tugas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
+    private javax.swing.JScrollPane jScrollPane1;
     private pomofocus.Navbar navbar1;
     // End of variables declaration//GEN-END:variables
 }
