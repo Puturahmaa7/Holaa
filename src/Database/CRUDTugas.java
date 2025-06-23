@@ -1,20 +1,18 @@
-package pomofocus;
+package Database;
 
 import java.sql.*;
 import java.util.*;
-import java.sql.Timestamp;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.SQLException;
-import java.sql.*;
 
 public class CRUDTugas {
     private static CRUDTugas instance;
     private Connection conn;
 
-    private CRUDTugas() throws SQLException, Exception {
+    public CRUDTugas() throws SQLException, Exception {
         conn = Koneksi.configDB();
     }
 
@@ -114,4 +112,5 @@ public class CRUDTugas {
     }
     return null;
 }
+
 }

@@ -1,4 +1,4 @@
-package pomofocus;
+package Database;
 
 import java.sql.Connection;
 import java.sql.Statement;

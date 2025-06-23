@@ -1,4 +1,4 @@
-package pomofocus;
+package Database;
 
 public class UserInfoGetSet {
     private int userID;
@@ -8,7 +8,7 @@ public class UserInfoGetSet {
     private String resetCode;
 
     public UserInfoGetSet() {
-    }
+}
 
     public UserInfoGetSet(int userID, String userName, String email, String password, String resetCode) {
         this.userID = userID;
@@ -21,6 +21,7 @@ public class UserInfoGetSet {
     public int getUserID() {
         return userID;
     }
+    
 
     public void setUserID(int userID) {
         this.userID = userID;

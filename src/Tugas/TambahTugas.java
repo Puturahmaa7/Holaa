@@ -1,15 +1,12 @@
-package pomofocus;
+package Tugas;
 
+import Database.CRUDTugas;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-
-
 public class TambahTugas extends javax.swing.JFrame {
-    
-    
-    
+
     public TambahTugas() {
         initComponents();
     }
@@ -77,7 +74,7 @@ public class TambahTugas extends javax.swing.JFrame {
             .addGroup(PanelAtas2Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
                 .addComponent(JudulTugas1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         PanelAtas2Layout.setVerticalGroup(
             PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

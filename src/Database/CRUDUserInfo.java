@@ -1,5 +1,6 @@
-package pomofocus;
+package Database;
 
+import Database.Koneksi;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
@@ -103,7 +104,7 @@ public class CRUDUserInfo {
         return duplicate;
     }
     
-    boolean checkEmailExist(String email) throws SQLException {
+    public boolean checkEmailExist(String email) throws SQLException {
     PreparedStatement p = con.prepareStatement("SELECT id_pengguna FROM pengguna WHERE email=? LIMIT 1");
     p.setString(1, email);
     ResultSet r = p.executeQuery();

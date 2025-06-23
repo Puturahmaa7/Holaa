@@ -47,15 +47,10 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="PanelAtas2" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="117" max="32767" attributes="0"/>
-                  <Component id="button1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="WaktuDeadlineTugasTambah" max="32767" attributes="0"/>
+                      <Component id="WaktuDeadlineTugasTambah" alignment="0" max="32767" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                           <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                               <Component id="JudulTugasTambah" alignment="0" max="32767" attributes="0"/>
@@ -69,6 +64,11 @@
                       <Component id="WaktuTanggalDeadline3" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="133" max="32767" attributes="0"/>
+                  <Component id="button1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -92,9 +92,9 @@
                   <Component id="WaktuTanggalDeadline3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="DeskripsiTugas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
                   <Component id="button1" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -179,19 +179,19 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                      <Component id="JudulTugas1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="JudulTugas1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="JudulTugas1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace pref="44" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -205,14 +205,14 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="0" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tambah Tugas"/>
+                <Property name="text" type="java.lang.String" value="Edit Tugas"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
         <Component class="pomofocus.Button" name="button1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tambah Tugas"/>
+            <Property name="text" type="java.lang.String" value="Edit Tugas"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>

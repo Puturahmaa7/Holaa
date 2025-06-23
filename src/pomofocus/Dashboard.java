@@ -1,5 +1,8 @@
 package pomofocus;
 
+import DataPengguna.Profile;
+import Tugas.TugasHariIni;
+
 public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {

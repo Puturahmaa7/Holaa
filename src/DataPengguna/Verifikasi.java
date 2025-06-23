@@ -1,7 +1,9 @@
-package pomofocus;
+package DataPengguna;
 
+import DataPengguna.UbahPassword;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
+import Database.CRUDUserInfo;
 
 public class Verifikasi extends javax.swing.JFrame {
 
