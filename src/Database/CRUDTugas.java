@@ -53,12 +53,12 @@ public class CRUDTugas {
         return list;
     }
 
-    public boolean updateTugas(int id, String nama, String tgl, String jam, String deskripsi) throws SQLException {
+    public boolean updateTugas(String nama, Date tgl, Time jam, String deskripsi,int id) throws SQLException {
         String sql = "UPDATE tugas SET nama_tugas=?, tanggal_deadline=?, jam_deadline=?, deskripsi=? WHERE id_tugas=?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, nama);
-        stmt.setString(2, tgl);
-        stmt.setString(3, jam);
+        stmt.setDate(2, tgl);
+        stmt.setTime(3, jam);
         stmt.setString(4, deskripsi);
         stmt.setInt(5, id);
         return stmt.executeUpdate() > 0;

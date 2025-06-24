@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import Database.CRUDTugas;
 import Database.TugasGetSet;
+import java.util.Calendar;
 
 public class EditTugas extends javax.swing.JFrame {
 
@@ -42,6 +43,7 @@ public class EditTugas extends javax.swing.JFrame {
     
 public EditTugas() {
     initComponents();
+    sVGIcon11.setSVGIcon("SVGIcon/NewBack.svg", 50, 50);
     try {
         tampilkanDataTugas();
     } catch (Exception e) {
@@ -67,6 +69,7 @@ public EditTugas() {
         WaktuTanggalDeadline3 = new javax.swing.JLabel();
         PanelAtas2 = new javax.swing.JPanel();
         JudulTugas1 = new javax.swing.JLabel();
+        sVGIcon11 = new pomofocus.SVGIcon();
         button1 = new pomofocus.Button();
         WaktuDeadlineTugasTambah = new lu.tudor.santec.jtimechooser.JTimeChooser();
 
@@ -108,12 +111,21 @@ public EditTugas() {
         JudulTugas1.setForeground(new java.awt.Color(0, 0, 153));
         JudulTugas1.setText("Edit Tugas");
 
+        sVGIcon11.setText("sVGIcon1");
+        sVGIcon11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGIcon11MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelAtas2Layout = new javax.swing.GroupLayout(PanelAtas2);
         PanelAtas2.setLayout(PanelAtas2Layout);
         PanelAtas2Layout.setHorizontalGroup(
             PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAtas2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(JudulTugas1)
                 .addGap(122, 122, 122))
         );
@@ -121,7 +133,9 @@ public EditTugas() {
             PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAtas2Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(JudulTugas1)
+                .addGroup(PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JudulTugas1)
+                    .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -200,8 +214,64 @@ public EditTugas() {
     }//GEN-LAST:event_JudulTugasTambahActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        String namaTugas = JudulTugasTambah.getText().trim();
+        Calendar tanggalCal = DeadlineTugasTambah.getCalendar();
+        String deskripsi = DescTugasTambah.getText().trim();
 
+        int jam = WaktuDeadlineTugasTambah.getHours();
+        int menit = WaktuDeadlineTugasTambah.getMinutes();
+        int detik = 0;
+
+        if (namaTugas.isEmpty() || tanggalCal == null) {
+            JOptionPane.showMessageDialog(this, "Semua field wajib diisi.");
+            return;
+        }
+
+        Calendar gabung = Calendar.getInstance();
+        gabung.set(
+            tanggalCal.get(Calendar.YEAR),
+            tanggalCal.get(Calendar.MONTH),
+            tanggalCal.get(Calendar.DAY_OF_MONTH),
+            jam,
+            menit,
+            detik
+        );
+
+        java.sql.Date sqlTanggal = new java.sql.Date(gabung.getTimeInMillis());
+        java.sql.Time sqlWaktu = new java.sql.Time(gabung.getTimeInMillis());
+        
+        try {
+            int id_tugas = Session.currentTugas.getIdTugas();
+            CRUDTugas crud = CRUDTugas.getInstance();
+            boolean sukses = crud.updateTugas(namaTugas, sqlTanggal, sqlWaktu, deskripsi, id_tugas);
+            
+            if (sukses) {
+                JOptionPane.showMessageDialog(this, "Tugas berhasil diperbarui.");
+                JudulTugasTambah.setText("");
+                DeadlineTugasTambah.setDate(null);
+                DescTugasTambah.setText("");
+
+                Calendar kosong = Calendar.getInstance();
+                kosong.set(Calendar.HOUR_OF_DAY, 0);
+                kosong.set(Calendar.MINUTE, 0);
+                kosong.set(Calendar.SECOND, 0);
+                WaktuDeadlineTugasTambah.setTime(kosong.getTime());
+                new Tugas().setVisible(true);
+                this.dispose();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Gagal memperbarui tugas.");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void sVGIcon11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon11MouseClicked
+        new Tugas().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_sVGIcon11MouseClicked
 
 
     public static void main(String args[]) {
@@ -248,5 +318,6 @@ public EditTugas() {
     private javax.swing.JLabel WaktuTanggalDeadline2;
     private javax.swing.JLabel WaktuTanggalDeadline3;
     private pomofocus.Button button1;
+    private pomofocus.SVGIcon sVGIcon11;
     // End of variables declaration//GEN-END:variables
 }

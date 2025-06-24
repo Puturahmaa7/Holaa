@@ -4,6 +4,7 @@ import DataPengguna.Login;
 import Database.Session;
 import Database.CRUDUserInfo;
 import javax.swing.JOptionPane;
+import pomofocus.Dashboard;
 
 public class Profile extends javax.swing.JFrame {
     private void tampilkanDataUser() {
@@ -22,6 +23,8 @@ public class Profile extends javax.swing.JFrame {
     public Profile() {
         initComponents();
         tampilkanDataUser();
+        sVGIcon11.setSVGIcon("SVGIcon/LogoPomo.svg", 130, 130);
+        sVGIcon12.setSVGIcon("SVGIcon/NewBack.svg", 50, 50);
     }
 
     @SuppressWarnings("unchecked")
@@ -32,7 +35,8 @@ public class Profile extends javax.swing.JFrame {
         usernameProfile = new javax.swing.JTextField();
         JudulTugas1 = new javax.swing.JLabel();
         PanelAtas = new javax.swing.JPanel();
-        sVGIcon1 = new pomofocus.SVGIcon();
+        sVGIcon11 = new pomofocus.SVGIcon();
+        sVGIcon12 = new pomofocus.SVGIcon();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -66,22 +70,33 @@ public class Profile extends javax.swing.JFrame {
         PanelAtas.setBackground(new java.awt.Color(255, 174, 57));
         PanelAtas.setForeground(new java.awt.Color(102, 0, 102));
 
-        sVGIcon1.setText("sVGIcon1");
+        sVGIcon11.setText("sVGIcon1");
+
+        sVGIcon12.setText("sVGIcon1");
+        sVGIcon12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGIcon12MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelAtasLayout = new javax.swing.GroupLayout(PanelAtas);
         PanelAtas.setLayout(PanelAtasLayout);
         PanelAtasLayout.setHorizontalGroup(
             PanelAtasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAtasLayout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addComponent(sVGIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(sVGIcon12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelAtasLayout.setVerticalGroup(
             PanelAtasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAtasLayout.createSequentialGroup()
                 .addContainerGap(17, Short.MAX_VALUE)
-                .addComponent(sVGIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelAtasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sVGIcon12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -136,7 +151,7 @@ public class Profile extends javax.swing.JFrame {
         JudulTugas5.setForeground(new java.awt.Color(0, 0, 102));
         JudulTugas5.setText("Email");
 
-        button2.setText("Register");
+        button2.setText("Edit Profile");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button2ActionPerformed(evt);
@@ -161,21 +176,22 @@ public class Profile extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(139, 139, 139))
             .addGroup(MainPanelLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JudulTugas2)
                     .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JudulTugas1))
-                    .addComponent(usernameProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JudulTugas5))
+                        .addGap(39, 39, 39)
+                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JudulTugas2)
+                            .addGroup(MainPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JudulTugas1))
+                            .addComponent(usernameProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JudulTugas5)))
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainPanelLayout.setVerticalGroup(
@@ -271,6 +287,11 @@ public class Profile extends javax.swing.JFrame {
         
     }//GEN-LAST:event_JudulTugas1MouseClicked
 
+    private void sVGIcon12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon12MouseClicked
+        new Dashboard().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_sVGIcon12MouseClicked
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -314,7 +335,8 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private pomofocus.SVGIcon sVGIcon1;
+    private pomofocus.SVGIcon sVGIcon11;
+    private pomofocus.SVGIcon sVGIcon12;
     private javax.swing.JTextField usernameProfile;
     // End of variables declaration//GEN-END:variables
 }

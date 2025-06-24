@@ -102,6 +102,9 @@
               <Dimension value="[159, 30]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TargetMouseClicked"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -143,6 +146,9 @@
               <Color blue="39" green="ae" red="ff" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pengukuranCepatMouseClicked"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">

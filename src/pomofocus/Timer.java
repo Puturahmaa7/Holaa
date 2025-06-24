@@ -43,6 +43,11 @@ public class Timer extends javax.swing.JFrame {
 
         Target.setBackground(new java.awt.Color(255, 174, 57));
         Target.setPreferredSize(new java.awt.Dimension(159, 30));
+        Target.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TargetMouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,6 +71,11 @@ public class Timer extends javax.swing.JFrame {
         );
 
         pengukuranCepat.setBackground(new java.awt.Color(255, 174, 57));
+        pengukuranCepat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pengukuranCepatMouseClicked(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -143,6 +153,16 @@ public class Timer extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TargetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TargetMouseClicked
+        new Target().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_TargetMouseClicked
+
+    private void pengukuranCepatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pengukuranCepatMouseClicked
+        new PengukuranCepat().setVisible(true);
+        this.dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_pengukuranCepatMouseClicked
 
     /**
      * @param args the command line arguments

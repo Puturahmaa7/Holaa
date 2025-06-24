@@ -10,6 +10,7 @@ public class TambahTugas extends javax.swing.JFrame {
 
     public TambahTugas() {
         initComponents();
+        sVGIcon11.setSVGIcon("SVGIcon/NewBack.svg", 50, 50);
     }
 
     @SuppressWarnings("unchecked")
@@ -27,6 +28,7 @@ public class TambahTugas extends javax.swing.JFrame {
         WaktuTanggalDeadline3 = new javax.swing.JLabel();
         PanelAtas2 = new javax.swing.JPanel();
         JudulTugas1 = new javax.swing.JLabel();
+        sVGIcon11 = new pomofocus.SVGIcon();
         button1 = new pomofocus.Button();
         WaktuDeadlineTugasTambah = new lu.tudor.santec.jtimechooser.JTimeChooser();
 
@@ -68,12 +70,21 @@ public class TambahTugas extends javax.swing.JFrame {
         JudulTugas1.setForeground(new java.awt.Color(0, 0, 153));
         JudulTugas1.setText("Tambah Tugas");
 
+        sVGIcon11.setText("sVGIcon1");
+        sVGIcon11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGIcon11MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelAtas2Layout = new javax.swing.GroupLayout(PanelAtas2);
         PanelAtas2.setLayout(PanelAtas2Layout);
         PanelAtas2Layout.setHorizontalGroup(
             PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAtas2Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
+                .addGap(28, 28, 28)
+                .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(JudulTugas1)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
@@ -81,7 +92,9 @@ public class TambahTugas extends javax.swing.JFrame {
             PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAtas2Layout.createSequentialGroup()
                 .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(JudulTugas1)
+                .addGroup(PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JudulTugas1)
+                    .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40))
         );
 
@@ -214,6 +227,12 @@ public class TambahTugas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_button1ActionPerformed
 
+    private void sVGIcon11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon11MouseClicked
+        new Tugas().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sVGIcon11MouseClicked
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -258,5 +277,6 @@ public class TambahTugas extends javax.swing.JFrame {
     private javax.swing.JLabel WaktuTanggalDeadline2;
     private javax.swing.JLabel WaktuTanggalDeadline3;
     private pomofocus.Button button1;
+    private pomofocus.SVGIcon sVGIcon11;
     // End of variables declaration//GEN-END:variables
 }

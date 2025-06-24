@@ -16,6 +16,7 @@ public class DaftarTugas extends JPanel {
     private JLabel JamDeadline;
     private JLabel TombolEdit;
     private JCheckBox CheckBox;
+    private JProgressBar ProgressBar;
 
     private int idTugas;
 
@@ -27,6 +28,10 @@ public class DaftarTugas extends JPanel {
         TanggalDeadline.setText(tanggal);
         JamDeadline.setText(jam);
         CheckBox.setSelected("selesai".equalsIgnoreCase(status));
+        ProgressBar.setMinimum(0);
+        ProgressBar.setMaximum(100);
+        ProgressBar.setValue(0); // Awal progress
+        ProgressBar.setStringPainted(true); // Tampilkan persentase
     }
 
     private void initComponents() {
@@ -37,6 +42,7 @@ public class DaftarTugas extends JPanel {
         JamDeadline = new JLabel();
         TombolEdit = new JLabel("Edit");
         CheckBox = new JCheckBox();
+        ProgressBar = new JProgressBar();
 
         setBackground(new Color(250, 227, 143));
         setBorder(BorderFactory.createLineBorder(new Color(204, 204, 204), 1, true));

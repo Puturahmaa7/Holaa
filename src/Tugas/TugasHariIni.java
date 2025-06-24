@@ -1,11 +1,14 @@
 package Tugas;
 
+import pomofocus.Dashboard;
+
 public class TugasHariIni extends javax.swing.JFrame {
 
     public TugasHariIni() {
         initComponents();
         PanelDaftarTugasHariIni daftarPanel = new PanelDaftarTugasHariIni();
         jScrollPane1.setViewportView(daftarPanel);
+        sVGIcon11.setSVGIcon("SVGIcon/NewBack.svg", 50, 50);
     }
 
     @SuppressWarnings("unchecked")
@@ -14,6 +17,8 @@ public class TugasHariIni extends javax.swing.JFrame {
 
         MainPanel = new javax.swing.JPanel();
         PanelAtas = new javax.swing.JPanel();
+        JudulTugas1 = new javax.swing.JLabel();
+        sVGIcon11 = new pomofocus.SVGIcon();
         jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -24,15 +29,36 @@ public class TugasHariIni extends javax.swing.JFrame {
         PanelAtas.setBackground(new java.awt.Color(255, 174, 57));
         PanelAtas.setForeground(new java.awt.Color(102, 0, 102));
 
+        JudulTugas1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        JudulTugas1.setForeground(new java.awt.Color(0, 0, 153));
+        JudulTugas1.setText("Tugas Hari Ini");
+
+        sVGIcon11.setText("sVGIcon1");
+        sVGIcon11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGIcon11MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelAtasLayout = new javax.swing.GroupLayout(PanelAtas);
         PanelAtas.setLayout(PanelAtasLayout);
         PanelAtasLayout.setHorizontalGroup(
             PanelAtasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 375, Short.MAX_VALUE)
+            .addGroup(PanelAtasLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JudulTugas1)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         PanelAtasLayout.setVerticalGroup(
             PanelAtasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
+            .addGroup(PanelAtasLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(PanelAtasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JudulTugas1)
+                    .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -63,6 +89,11 @@ public class TugasHariIni extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sVGIcon11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon11MouseClicked
+        new Dashboard().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_sVGIcon11MouseClicked
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -95,8 +126,10 @@ public class TugasHariIni extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JudulTugas1;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
     private javax.swing.JScrollPane jScrollPane1;
+    private pomofocus.SVGIcon sVGIcon11;
     // End of variables declaration//GEN-END:variables
 }
