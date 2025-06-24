@@ -21,21 +21,24 @@ public class CRUDTugas {
         return instance;
     }
 
-    public boolean tambahTugas(String nama, Date tgl, Time jam, String deskripsi) throws SQLException {
-        String sql = "INSERT INTO tugas (nama_tugas, tanggal_deadline, jam_deadline, deskripsi) VALUES (?, ?, ?, ?)";
+    public boolean tambahTugas(String nama, Date tgl, Time jam, String deskripsi, int id_Pengguna) throws SQLException {
+        String sql = "INSERT INTO tugas (nama_tugas, tanggal_deadline, jam_deadline, deskripsi, id_pengguna) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, nama);
         stmt.setDate(2, tgl);
         stmt.setTime(3, jam);
         stmt.setString(4, deskripsi);
+        stmt.setInt(5, id_Pengguna); // foreign key dimasukkan
         return stmt.executeUpdate() > 0;
     }
 
 
-    public List<TugasGetSet> ambilSemuaTugas() throws SQLException {
+
+    public List<TugasGetSet> ambilSemuaTugasByUser(int id_Pengguna) throws SQLException {
         List<TugasGetSet> list = new ArrayList<>();
-        String sql = "SELECT * FROM tugas ORDER BY tanggal_deadline ASC";
+        String sql = "SELECT * FROM tugas WHERE id_Pengguna = ? ORDER BY tanggal_deadline ASC";
         PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, id_Pengguna);
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
             list.add(new TugasGetSet(
@@ -75,11 +78,11 @@ public class CRUDTugas {
         return stmt.executeUpdate() > 0;
     }
     
-    public List<TugasGetSet> ambilTugasTerdekat(int hariKeDepan) throws SQLException {
+    public List<TugasGetSet> ambilTugasHariIni(int id_Pengguna) throws SQLException {
         List<TugasGetSet> list = new ArrayList<>();
-        String sql = "SELECT * FROM tugas WHERE tanggal_deadline BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL ? DAY) ORDER BY tanggal_deadline ASC, jam_deadline ASC";
+        String sql = "SELECT * FROM tugas WHERE tanggal_deadline = CURDATE() AND id_pengguna = ? ORDER BY tanggal_deadline ASC, jam_deadline ASC";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, hariKeDepan);
+        stmt.setInt(1, id_Pengguna);
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
             list.add(new TugasGetSet(

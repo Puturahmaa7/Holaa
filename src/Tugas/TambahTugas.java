@@ -1,6 +1,7 @@
 package Tugas;
 
 import Database.CRUDTugas;
+import Database.Session;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -186,9 +187,10 @@ public class TambahTugas extends javax.swing.JFrame {
         java.sql.Time sqlWaktu = new java.sql.Time(gabung.getTimeInMillis());
 
         try {
+            int idLogin = Session.currentUser.getUserID();
             CRUDTugas crud = CRUDTugas.getInstance();
-            boolean sukses = crud.tambahTugas(namaTugas, sqlTanggal, sqlWaktu, deskripsi);
-
+            boolean sukses = crud.tambahTugas(namaTugas, sqlTanggal, sqlWaktu, deskripsi, idLogin);
+            
             if (sukses) {
                 JOptionPane.showMessageDialog(this, "Tugas berhasil ditambahkan.");
                 JudulTugasTambah.setText("");
@@ -200,6 +202,8 @@ public class TambahTugas extends javax.swing.JFrame {
                 kosong.set(Calendar.MINUTE, 0);
                 kosong.set(Calendar.SECOND, 0);
                 WaktuDeadlineTugasTambah.setTime(kosong.getTime());
+                new Tugas().setVisible(true);
+                this.dispose();
 
             } else {
                 JOptionPane.showMessageDialog(this, "Gagal menambahkan tugas.");

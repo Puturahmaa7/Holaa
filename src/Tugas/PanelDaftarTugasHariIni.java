@@ -8,9 +8,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public class PanelDaftarTugas extends JPanel {
-
-    public PanelDaftarTugas() {
+public class PanelDaftarTugasHariIni extends JPanel {
+    public PanelDaftarTugasHariIni() {
+        setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBackground(new Color(248, 244, 225));
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -23,7 +23,7 @@ public class PanelDaftarTugas extends JPanel {
         try {
             int idPengguna = Session.currentUser.getUserID(); // ambil ID user login
             CRUDTugas crud = CRUDTugas.getInstance();
-            List<TugasGetSet> daftarTugas = crud.ambilSemuaTugasByUser(idPengguna);
+            List<TugasGetSet> daftarTugas = crud.ambilTugasHariIni(idPengguna);
 
             for (TugasGetSet tugas : daftarTugas) {
                 DaftarTugas tugasPanel = new DaftarTugas(

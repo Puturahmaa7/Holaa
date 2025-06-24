@@ -1,5 +1,7 @@
 package pomofocus;
 
+import Database.Session;
+import javax.swing.JOptionPane;
 import Tugas.Tugas;
 import javax.swing.*;
 import java.awt.*;
@@ -27,10 +29,15 @@ public class Navbar extends JPanel {
 
         sVGIcon2.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
+                if (Session.currentUser == null) {
+                    JOptionPane.showMessageDialog(Navbar.this, "Silakan login terlebih dahulu.");
+                    return;
+                }
                 new Tugas().setVisible(true);
                 SwingUtilities.getWindowAncestor(Navbar.this).dispose();
             }
         });
+
 
         sVGIcon3.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {

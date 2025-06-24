@@ -1,7 +1,13 @@
 package pomofocus;
 
 import DataPengguna.Profile;
+import DataPengguna.Login;
+import Database.Session;
 import Tugas.TugasHariIni;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import javax.swing.JOptionPane;
 
 public class Dashboard extends javax.swing.JFrame {
 
@@ -9,6 +15,10 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         sVGIcon10.setSVGIcon("SVGIcon/LogoPomo.svg", 130, 130);
         sVGIcon11.setSVGIcon("SVGIcon/NewProfil.svg", 50, 50);
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", new Locale("id", "ID"));
+        String tanggalSekarang = today.format(formatter);
+        TanggalHariIni.setText(tanggalSekarang);
     }
 
     @SuppressWarnings("unchecked")
@@ -178,10 +188,6 @@ public class Dashboard extends javax.swing.JFrame {
         TugasHariIni.setLayout(TugasHariIniLayout);
         TugasHariIniLayout.setHorizontalGroup(
             TugasHariIniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TugasHariIniLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(TanggalHariIni)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TugasHariIniLayout.createSequentialGroup()
                 .addGroup(TugasHariIniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(TugasHariIniLayout.createSequentialGroup()
@@ -195,6 +201,10 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(HeadTugasHariIni)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(TugasHariIniLayout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(TanggalHariIni)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         TugasHariIniLayout.setVerticalGroup(
             TugasHariIniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,11 +408,21 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LihatSemuaTugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LihatSemuaTugasMouseClicked
+        if (Session.currentUser == null) {
+            JOptionPane.showMessageDialog(this, "Silakan login terlebih dahulu.");
+            return;
+        }
         new TugasHariIni().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LihatSemuaTugasMouseClicked
 
     private void sVGIcon11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon11MouseClicked
+        if (Session.currentUser == null) {
+            JOptionPane.showMessageDialog(this, "Silakan login terlebih dahulu.");
+            new Login().setVisible(true);
+            this.dispose();
+            return;
+        }
         new Profile().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_sVGIcon11MouseClicked
