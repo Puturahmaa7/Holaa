@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package pomofocus;
+package DataStatistik;
 
 /**
  *
@@ -28,7 +28,7 @@ public class Statistik extends javax.swing.JFrame {
 
         MainPanel = new javax.swing.JPanel();
         PanelAtas = new javax.swing.JPanel();
-        navbar1 = new pomofocus.Navbar();
+        navbar1 = new Instance.Navbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,6 +118,6 @@ public class Statistik extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
-    private pomofocus.Navbar navbar1;
+    private Instance.Navbar navbar1;
     // End of variables declaration//GEN-END:variables
 }

@@ -150,7 +150,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="pomofocus.SVGIcon" name="sVGIcon1">
+            <Component class="Instance.SVGIcon" name="sVGIcon1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="sVGIcon1"/>
               </Properties>
@@ -199,7 +199,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="pomofocus.Button" name="button2">
+        <Component class="Instance.Button" name="button2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Verifikasi"/>
           </Properties>

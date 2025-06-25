@@ -161,12 +161,12 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="pomofocus.SVGIcon" name="sVGIcon11">
+            <Component class="Instance.SVGIcon" name="sVGIcon11">
               <Properties>
                 <Property name="text" type="java.lang.String" value="sVGIcon1"/>
               </Properties>
             </Component>
-            <Component class="pomofocus.SVGIcon" name="sVGIcon12">
+            <Component class="Instance.SVGIcon" name="sVGIcon12">
               <Properties>
                 <Property name="text" type="java.lang.String" value="sVGIcon1"/>
               </Properties>
@@ -266,7 +266,7 @@
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
-        <Component class="pomofocus.Button" name="button2">
+        <Component class="Instance.Button" name="button2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit Profile"/>
           </Properties>

@@ -119,14 +119,14 @@
                 <Property name="text" type="java.lang.String" value="Tugas"/>
               </Properties>
             </Component>
-            <Component class="pomofocus.SVGIcon" name="sVGIcon11">
+            <Component class="Instance.SVGIcon" name="sVGIcon11">
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGIcon11MouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="pomofocus.Navbar" name="navbar1">
+        <Component class="Instance.Navbar" name="navbar1">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 

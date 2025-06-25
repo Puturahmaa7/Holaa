@@ -87,7 +87,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="pomofocus.Navbar" name="navbar1">
+        <Component class="Instance.Navbar" name="navbar1">
         </Component>
       </SubComponents>
     </Container>

@@ -1,17 +1,15 @@
 
-package pomofocus;
+package Timer;
 
-
+import Timer.PengukuranCepat;
 
 public class Timer extends javax.swing.JFrame {
-
     
     public Timer() {
         initComponents();
         
     }
-
-   
+ 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -22,7 +20,7 @@ public class Timer extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         pengukuranCepat = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        navbar2 = new pomofocus.Navbar();
+        navbar2 = new Instance.Navbar();
         PanelAtas = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -156,19 +154,16 @@ public class Timer extends javax.swing.JFrame {
 
     private void TargetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TargetMouseClicked
         new Target().setVisible(true);
-        this.dispose();        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_TargetMouseClicked
 
     private void pengukuranCepatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pengukuranCepatMouseClicked
         new PengukuranCepat().setVisible(true);
-        this.dispose();         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_pengukuranCepatMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -191,7 +186,6 @@ public class Timer extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Timer().setVisible(true);
@@ -206,7 +200,7 @@ public class Timer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
-    private pomofocus.Navbar navbar2;
+    private Instance.Navbar navbar2;
     private javax.swing.JPanel pengukuranCepat;
     // End of variables declaration//GEN-END:variables
 }

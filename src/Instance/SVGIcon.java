@@ -1,4 +1,4 @@
-package pomofocus;
+package Instance;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import javax.swing.JLabel;

@@ -108,7 +108,7 @@
                 <Property name="text" type="java.lang.String" value="Tugas Hari Ini"/>
               </Properties>
             </Component>
-            <Component class="pomofocus.SVGIcon" name="sVGIcon11">
+            <Component class="Instance.SVGIcon" name="sVGIcon11">
               <Properties>
                 <Property name="text" type="java.lang.String" value="sVGIcon1"/>
               </Properties>

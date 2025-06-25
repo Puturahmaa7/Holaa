@@ -35,15 +35,15 @@ public class Profile extends javax.swing.JFrame {
         usernameProfile = new javax.swing.JTextField();
         JudulTugas1 = new javax.swing.JLabel();
         PanelAtas = new javax.swing.JPanel();
-        sVGIcon11 = new pomofocus.SVGIcon();
-        sVGIcon12 = new pomofocus.SVGIcon();
+        sVGIcon11 = new Instance.SVGIcon();
+        sVGIcon12 = new Instance.SVGIcon();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         emailProfile = new javax.swing.JTextField();
         JudulTugas5 = new javax.swing.JLabel();
-        button2 = new pomofocus.Button();
+        button2 = new Instance.Button();
         jLabel4 = new javax.swing.JLabel();
         JudulTugas2 = new javax.swing.JLabel();
 
@@ -328,15 +328,15 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JLabel JudulTugas5;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
-    private pomofocus.Button button2;
+    private Instance.Button button2;
     private javax.swing.JTextField emailProfile;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private pomofocus.SVGIcon sVGIcon11;
-    private pomofocus.SVGIcon sVGIcon12;
+    private Instance.SVGIcon sVGIcon11;
+    private Instance.SVGIcon sVGIcon12;
     private javax.swing.JTextField usernameProfile;
     // End of variables declaration//GEN-END:variables
 }

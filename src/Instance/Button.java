@@ -1,4 +1,4 @@
-package pomofocus;
+package Instance;
 
 import java.awt.Color;
 import java.awt.Font;

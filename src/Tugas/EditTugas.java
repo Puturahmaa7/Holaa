@@ -69,8 +69,8 @@ public EditTugas() {
         WaktuTanggalDeadline3 = new javax.swing.JLabel();
         PanelAtas2 = new javax.swing.JPanel();
         JudulTugas1 = new javax.swing.JLabel();
-        sVGIcon11 = new pomofocus.SVGIcon();
-        button1 = new pomofocus.Button();
+        sVGIcon11 = new Instance.SVGIcon();
+        button1 = new Instance.Button();
         WaktuDeadlineTugasTambah = new lu.tudor.santec.jtimechooser.JTimeChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -317,7 +317,7 @@ public EditTugas() {
     private javax.swing.JLabel WaktuTanggalDeadline1;
     private javax.swing.JLabel WaktuTanggalDeadline2;
     private javax.swing.JLabel WaktuTanggalDeadline3;
-    private pomofocus.Button button1;
-    private pomofocus.SVGIcon sVGIcon11;
+    private Instance.Button button1;
+    private Instance.SVGIcon sVGIcon11;
     // End of variables declaration//GEN-END:variables
 }

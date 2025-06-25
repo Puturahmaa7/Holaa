@@ -20,8 +20,8 @@ public class Tugas extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         PanelAtas = new javax.swing.JPanel();
         JudulTugas1 = new javax.swing.JLabel();
-        sVGIcon11 = new pomofocus.SVGIcon();
-        navbar1 = new pomofocus.Navbar();
+        sVGIcon11 = new Instance.SVGIcon();
+        navbar1 = new Instance.Navbar();
         jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -145,7 +145,7 @@ public class Tugas extends javax.swing.JFrame {
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
     private javax.swing.JScrollPane jScrollPane1;
-    private pomofocus.Navbar navbar1;
-    private pomofocus.SVGIcon sVGIcon11;
+    private Instance.Navbar navbar1;
+    private Instance.SVGIcon sVGIcon11;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,7 +22,7 @@ public class Register extends javax.swing.JFrame {
         passwordRegister = new javax.swing.JPasswordField();
         JudulTugas1 = new javax.swing.JLabel();
         PanelAtas = new javax.swing.JPanel();
-        sVGIcon1 = new pomofocus.SVGIcon();
+        sVGIcon1 = new Instance.SVGIcon();
         JudulTugas3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -32,7 +32,7 @@ public class Register extends javax.swing.JFrame {
         JudulTugas5 = new javax.swing.JLabel();
         passwordRegister1 = new javax.swing.JPasswordField();
         JudulTugas4 = new javax.swing.JLabel();
-        button2 = new pomofocus.Button();
+        button2 = new Instance.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -338,7 +338,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel JudulTugas5;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
-    private pomofocus.Button button2;
+    private Instance.Button button2;
     private javax.swing.JTextField emailRegister;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -346,7 +346,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField passwordRegister;
     private javax.swing.JPasswordField passwordRegister1;
-    private pomofocus.SVGIcon sVGIcon1;
+    private Instance.SVGIcon sVGIcon1;
     private javax.swing.JTextField usernameRegister;
     // End of variables declaration//GEN-END:variables
 }

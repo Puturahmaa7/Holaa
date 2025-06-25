@@ -1,11 +1,14 @@
-package pomofocus;
+package Instance;
 
+import DataStatistik.Statistik;
+import Timer.Timer;
 import Database.Session;
 import javax.swing.JOptionPane;
 import Tugas.Tugas;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import pomofocus.Dashboard;
 
 public class Navbar extends JPanel {
     private SVGIcon sVGIcon1, sVGIcon2, sVGIcon3, sVGIcon4;

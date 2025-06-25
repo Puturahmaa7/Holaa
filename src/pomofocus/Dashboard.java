@@ -28,8 +28,8 @@ public class Dashboard extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         PanelAtas = new javax.swing.JPanel();
         PanelAtas1 = new javax.swing.JPanel();
-        sVGIcon10 = new pomofocus.SVGIcon();
-        sVGIcon11 = new pomofocus.SVGIcon();
+        sVGIcon10 = new Instance.SVGIcon();
+        sVGIcon11 = new Instance.SVGIcon();
         TugasHariIni = new javax.swing.JPanel();
         HeadTugasHariIni = new javax.swing.JLabel();
         PanelTgsHriIni = new java.awt.Panel();
@@ -52,7 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
         TanggalStart = new javax.swing.JLabel();
         TanggalEnd = new javax.swing.JLabel();
         PenghubungTanggal = new javax.swing.JLabel();
-        navbar1 = new pomofocus.Navbar();
+        navbar1 = new Instance.Navbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -483,8 +483,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel TanggalWaktuDeadlineTugasRemind1;
     private javax.swing.JPanel TugasHariIni;
     private javax.swing.JLabel WaktuTanggalDeadline;
-    private pomofocus.Navbar navbar1;
-    private pomofocus.SVGIcon sVGIcon10;
-    private pomofocus.SVGIcon sVGIcon11;
+    private Instance.Navbar navbar1;
+    private Instance.SVGIcon sVGIcon10;
+    private Instance.SVGIcon sVGIcon11;
     // End of variables declaration//GEN-END:variables
 }

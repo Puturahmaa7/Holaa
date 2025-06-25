@@ -187,7 +187,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="pomofocus.Navbar" name="navbar2">
+        <Component class="Instance.Navbar" name="navbar2">
         </Component>
         <Container class="javax.swing.JPanel" name="PanelAtas">
           <Properties>

@@ -24,14 +24,14 @@ public class Login extends javax.swing.JFrame {
         JudulTugas1 = new javax.swing.JLabel();
         JudulTugas2 = new javax.swing.JLabel();
         PanelAtas = new javax.swing.JPanel();
-        sVGIcon1 = new pomofocus.SVGIcon();
+        sVGIcon1 = new Instance.SVGIcon();
         JudulTugas3 = new javax.swing.JLabel();
         JudulTugas4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        button2 = new pomofocus.Button();
+        button2 = new Instance.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -295,13 +295,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel JudulTugas4;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
-    private pomofocus.Button button2;
+    private Instance.Button button2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField passwordLogin;
-    private pomofocus.SVGIcon sVGIcon1;
+    private Instance.SVGIcon sVGIcon1;
     private javax.swing.JTextField usernameLogin;
     // End of variables declaration//GEN-END:variables
 }

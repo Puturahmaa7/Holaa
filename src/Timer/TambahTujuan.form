@@ -194,7 +194,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="pomofocus.Button" name="button1">
+        <Component class="Instance.Button" name="button1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Simpan Tujuan"/>
           </Properties>
