@@ -4,6 +4,7 @@ import DataPengguna.UbahPassword;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import Database.CRUDUserInfo;
+import Database.Session;
 
 public class Verifikasi extends javax.swing.JFrame {
 
@@ -49,6 +50,11 @@ public class Verifikasi extends javax.swing.JFrame {
         sVGIcon11.setText("sVGIcon1");
 
         sVGIcon12.setText("sVGIcon1");
+        sVGIcon12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGIcon12MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelAtasLayout = new javax.swing.GroupLayout(PanelAtas);
         PanelAtas.setLayout(PanelAtasLayout);
@@ -246,6 +252,17 @@ public class Verifikasi extends javax.swing.JFrame {
         emailVerifikasi.setEditable(false);  
         this.email = email;
     }//GEN-LAST:event_JudulTugas6MouseClicked
+
+    private void sVGIcon12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon12MouseClicked
+        if (Session.previousPage.equals("login")) {
+            new Login().setVisible(true);
+        this.dispose();
+        } else if (Session.previousPage.equals("profile")) {
+            new Profile().setVisible(true);
+        this.dispose();
+        }
+        dispose();
+    }//GEN-LAST:event_sVGIcon12MouseClicked
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

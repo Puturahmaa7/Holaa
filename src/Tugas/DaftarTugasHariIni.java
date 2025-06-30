@@ -1,5 +1,6 @@
 package Tugas;
 
+import DataPengguna.Verifikasi;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -39,7 +40,7 @@ public class DaftarTugasHariIni extends JPanel {
         TombolEdit = new JLabel("Edit");
         CheckBox = new JCheckBox();
 
-        setBackground(new Color(250, 227, 143));
+        setBackground(new Color(255,252,235));
         setBorder(BorderFactory.createLineBorder(new Color(204, 204, 204), 1, true));
 
         JudulTugas.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -52,10 +53,10 @@ public class DaftarTugasHariIni extends JPanel {
         TombolEdit.setForeground(new Color(0, 0, 153));
         TombolEdit.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        setPreferredSize(new Dimension(350, 77));
-        setMaximumSize(new Dimension(350, 77));
-        setMinimumSize(new Dimension(350, 77));
-
+        setPreferredSize(new Dimension(330, 85));
+        setMaximumSize(new Dimension(330, 85));
+        setMinimumSize(new Dimension(330, 85));
+        
 
         CheckBox.addActionListener(evt -> checkboxAction());
         addMouseListener(new MouseAdapter() {
@@ -66,7 +67,8 @@ public class DaftarTugasHariIni extends JPanel {
                     tugas.setIdTugas(idTugas);
 
                     Session.currentTugas = tugas;
-
+                    Session.previousPage = "tugasHariIni";
+                    new EditTugas().setVisible(true);
                     new EditTugas().setVisible(true);
                 } catch (Exception ex) {
                     ex.printStackTrace();

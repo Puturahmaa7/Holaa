@@ -1,5 +1,7 @@
 package Tugas;
 
+import DataPengguna.Login;
+import DataPengguna.Profile;
 import Database.Session;
 import javax.swing.JOptionPane;
 import java.text.SimpleDateFormat;
@@ -7,6 +9,7 @@ import java.util.Date;
 import Database.CRUDTugas;
 import Database.TugasGetSet;
 import java.util.Calendar;
+import pomofocus.Dashboard;
 
 public class EditTugas extends javax.swing.JFrame {
 
@@ -123,7 +126,7 @@ public EditTugas() {
         PanelAtas2Layout.setHorizontalGroup(
             PanelAtas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAtas2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(sVGIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(JudulTugas1)
@@ -256,9 +259,15 @@ public EditTugas() {
                 kosong.set(Calendar.MINUTE, 0);
                 kosong.set(Calendar.SECOND, 0);
                 WaktuDeadlineTugasTambah.setTime(kosong.getTime());
-                new Tugas().setVisible(true);
+                
+                if ("tugasHariIni".equals(Session.previousPage)) {
+                    new Dashboard().setVisible(true);
+                } else if ("tugas".equals(Session.previousPage)) {
+                    new Tugas().setVisible(true);
+                } else {
+                    new TugasHariIni().setVisible(true); // fallback
+                }
                 this.dispose();
-
             } else {
                 JOptionPane.showMessageDialog(this, "Gagal memperbarui tugas.");
             }
@@ -269,8 +278,15 @@ public EditTugas() {
     }//GEN-LAST:event_button1ActionPerformed
 
     private void sVGIcon11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon11MouseClicked
-        new Tugas().setVisible(true);
-        this.dispose();        // TODO add your handling code here:
+            if ("tugasHariIni".equals(Session.previousPage)) {
+                new TugasHariIni().setVisible(true);
+            } else if ("tugas".equals(Session.previousPage)) {
+                new Tugas().setVisible(true);
+            } else {
+                // fallback jika tidak dikenali
+                new TugasHariIni().setVisible(true);
+            }
+            dispose();
     }//GEN-LAST:event_sVGIcon11MouseClicked
 
 

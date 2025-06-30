@@ -1,5 +1,6 @@
 package Tugas;
 
+import Database.Session;
 import pomofocus.Dashboard;
 
 public class TugasHariIni extends javax.swing.JFrame {
@@ -9,6 +10,7 @@ public class TugasHariIni extends javax.swing.JFrame {
         PanelDaftarTugasHariIni daftarPanel = new PanelDaftarTugasHariIni();
         jScrollPane1.setViewportView(daftarPanel);
         sVGIcon11.setSVGIcon("SVGIcon/NewBack.svg", 50, 50);
+        Session.previousPage = "tugasHariIni";
     }
 
     @SuppressWarnings("unchecked")
@@ -92,7 +94,7 @@ public class TugasHariIni extends javax.swing.JFrame {
 
     private void sVGIcon11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon11MouseClicked
         new Dashboard().setVisible(true);
-        this.dispose();        // TODO add your handling code here:
+        this.dispose();        
     }//GEN-LAST:event_sVGIcon11MouseClicked
 
     public static void main(String args[]) {

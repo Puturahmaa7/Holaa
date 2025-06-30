@@ -1,5 +1,6 @@
 package Tugas;
 
+import DataPengguna.Verifikasi;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -30,8 +31,8 @@ public class DaftarTugas extends JPanel {
         CheckBox.setSelected("selesai".equalsIgnoreCase(status));
         ProgressBar.setMinimum(0);
         ProgressBar.setMaximum(100);
-        ProgressBar.setValue(0); // Awal progress
-        ProgressBar.setStringPainted(true); // Tampilkan persentase
+        ProgressBar.setValue(0);
+        ProgressBar.setStringPainted(true);
     }
 
     private void initComponents() {
@@ -71,8 +72,8 @@ public class DaftarTugas extends JPanel {
                     tugas.setIdTugas(idTugas);
 
                     Session.currentTugas = tugas;
-
-                    new EditTugas().setVisible(true);
+                            Session.previousPage = "tugas";
+                            new EditTugas().setVisible(true);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }

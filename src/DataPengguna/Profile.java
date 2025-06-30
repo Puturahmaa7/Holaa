@@ -237,6 +237,7 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameProfileActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        Session.previousPage = "profile";
         new Verifikasi().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked

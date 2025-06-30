@@ -51,6 +51,11 @@ public class UbahPassword extends javax.swing.JFrame {
         sVGIcon11.setText("sVGIcon1");
 
         sVGIcon12.setText("sVGIcon1");
+        sVGIcon12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGIcon12MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelAtasLayout = new javax.swing.GroupLayout(PanelAtas);
         PanelAtas.setLayout(PanelAtasLayout);
@@ -104,7 +109,7 @@ public class UbahPassword extends javax.swing.JFrame {
         JudulTugas4.setForeground(new java.awt.Color(0, 0, 102));
         JudulTugas4.setText("Konfirmasi Password");
 
-        button2.setText("Register");
+        button2.setText("Ubah Password");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button2ActionPerformed(evt);
@@ -141,11 +146,11 @@ public class UbahPassword extends javax.swing.JFrame {
                             .addGroup(MainPanelLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(JudulTugas7)))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(141, 141, 141))
+                .addGap(0, 113, Short.MAX_VALUE)
+                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,9 +170,9 @@ public class UbahPassword extends javax.swing.JFrame {
                 .addComponent(JudulTugas6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JudulTugas7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(29, 29, 29)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(52, 52, 52)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
@@ -212,9 +217,8 @@ public class UbahPassword extends javax.swing.JFrame {
             CRUDUserInfo crud = CRUDUserInfo.getInstance();
             if (crud.resetPassword(verifiedEmail, newPass)) {
                 JOptionPane.showMessageDialog(this, "Password berhasil diubah!");
-                new Dashboard().setVisible(true);
+                new Login().setVisible(true);
                 this.dispose();
-                // Arahkan ke halaman login atau halaman lain jika diperlukan
             } else {
                 JOptionPane.showMessageDialog(this, "Gagal mengubah password.");
             }
@@ -223,6 +227,11 @@ public class UbahPassword extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + ex.getMessage());
         }
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void sVGIcon12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGIcon12MouseClicked
+        new Verifikasi().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_sVGIcon12MouseClicked
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

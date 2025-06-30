@@ -1,25 +1,15 @@
 package pomofocus;
 
-import DataPengguna.Profile;
 import DataPengguna.Login;
+import DataPengguna.Profile;
 import Database.Session;
 import Tugas.PanelDaftarTugasHariIni;
-import Tugas.TugasHariIni;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 import javax.swing.JOptionPane;
 
-public class Dashboard extends javax.swing.JFrame {
+public class DashboardsTrial extends javax.swing.JFrame {
 
-    public Dashboard() {
+    public DashboardsTrial() {
         initComponents();
-        sVGIcon10.setSVGIcon("SVGIcon/LogoPomo.svg", 130, 130);
-        sVGIcon11.setSVGIcon("SVGIcon/NewProfil.svg", 50, 50);
-        LocalDate today = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", new Locale("id", "ID"));
-        String tanggalSekarang = today.format(formatter);
-        TanggalHariIni.setText(tanggalSekarang);
         PanelDaftarTugasHariIni daftarPanel = new PanelDaftarTugasHariIni();
         jScrollPane1.setViewportView(daftarPanel);
     }
@@ -39,6 +29,17 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         StatistikPanelUtama = new javax.swing.JPanel();
         HeadJudulStatistik = new javax.swing.JLabel();
+        ReminderPanel = new javax.swing.JPanel();
+        PanelTugas1Remind = new java.awt.Panel();
+        TanggalWaktuDeadlineTugasRemind1 = new javax.swing.JLabel();
+        JudulTugasRemind1 = new javax.swing.JLabel();
+        PanelTugasRemind2 = new java.awt.Panel();
+        JudulTugasRemind2 = new javax.swing.JLabel();
+        TanggalWaktuDeadlineRemind2 = new javax.swing.JLabel();
+        HeadReminder = new javax.swing.JLabel();
+        TanggalStart = new javax.swing.JLabel();
+        TanggalEnd = new javax.swing.JLabel();
+        PenghubungTanggal = new javax.swing.JLabel();
         navbar1 = new Instance.Navbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -119,17 +120,18 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(TugasHariIniLayout.createSequentialGroup()
                 .addGroup(TugasHariIniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TugasHariIniLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
+                        .addGroup(TugasHariIniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TugasHariIniLayout.createSequentialGroup()
+                                .addGap(125, 125, 125)
+                                .addComponent(HeadTugasHariIni))
+                            .addGroup(TugasHariIniLayout.createSequentialGroup()
+                                .addGap(115, 115, 115)
+                                .addComponent(TanggalHariIni)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(TugasHariIniLayout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(HeadTugasHariIni)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
                 .addContainerGap())
-            .addGroup(TugasHariIniLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(TanggalHariIni)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         TugasHariIniLayout.setVerticalGroup(
             TugasHariIniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,8 +140,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(HeadTugasHariIni)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TanggalHariIni)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -163,7 +165,126 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(StatistikPanelUtamaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(HeadJudulStatistik)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
+        );
+
+        ReminderPanel.setBackground(new java.awt.Color(250, 227, 143));
+
+        PanelTugas1Remind.setBackground(new java.awt.Color(255, 252, 235));
+
+        TanggalWaktuDeadlineTugasRemind1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        TanggalWaktuDeadlineTugasRemind1.setForeground(new java.awt.Color(0, 0, 102));
+        TanggalWaktuDeadlineTugasRemind1.setText("Deadlie Pegumpulan");
+
+        JudulTugasRemind1.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        JudulTugasRemind1.setForeground(new java.awt.Color(0, 0, 102));
+        JudulTugasRemind1.setText("Judul Tugas");
+
+        javax.swing.GroupLayout PanelTugas1RemindLayout = new javax.swing.GroupLayout(PanelTugas1Remind);
+        PanelTugas1Remind.setLayout(PanelTugas1RemindLayout);
+        PanelTugas1RemindLayout.setHorizontalGroup(
+            PanelTugas1RemindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTugas1RemindLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelTugas1RemindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JudulTugasRemind1)
+                    .addComponent(TanggalWaktuDeadlineTugasRemind1))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        PanelTugas1RemindLayout.setVerticalGroup(
+            PanelTugas1RemindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTugas1RemindLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JudulTugasRemind1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TanggalWaktuDeadlineTugasRemind1)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+
+        PanelTugasRemind2.setBackground(new java.awt.Color(255, 252, 235));
+
+        JudulTugasRemind2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        JudulTugasRemind2.setForeground(new java.awt.Color(0, 0, 102));
+        JudulTugasRemind2.setText("Judul Tugas");
+
+        TanggalWaktuDeadlineRemind2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        TanggalWaktuDeadlineRemind2.setForeground(new java.awt.Color(0, 0, 102));
+        TanggalWaktuDeadlineRemind2.setText("Deadlie Pegumpulan");
+
+        javax.swing.GroupLayout PanelTugasRemind2Layout = new javax.swing.GroupLayout(PanelTugasRemind2);
+        PanelTugasRemind2.setLayout(PanelTugasRemind2Layout);
+        PanelTugasRemind2Layout.setHorizontalGroup(
+            PanelTugasRemind2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTugasRemind2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelTugasRemind2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JudulTugasRemind2)
+                    .addComponent(TanggalWaktuDeadlineRemind2))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        PanelTugasRemind2Layout.setVerticalGroup(
+            PanelTugasRemind2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTugasRemind2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JudulTugasRemind2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TanggalWaktuDeadlineRemind2)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        HeadReminder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        HeadReminder.setForeground(new java.awt.Color(0, 0, 153));
+        HeadReminder.setText("Reminder Deadline");
+
+        TanggalStart.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        TanggalStart.setForeground(new java.awt.Color(0, 0, 153));
+        TanggalStart.setText("DD-MM-YY");
+
+        TanggalEnd.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        TanggalEnd.setForeground(new java.awt.Color(0, 0, 153));
+        TanggalEnd.setText("DD-MM-YY");
+
+        PenghubungTanggal.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        PenghubungTanggal.setForeground(new java.awt.Color(0, 0, 153));
+        PenghubungTanggal.setText("-");
+
+        javax.swing.GroupLayout ReminderPanelLayout = new javax.swing.GroupLayout(ReminderPanel);
+        ReminderPanel.setLayout(ReminderPanelLayout);
+        ReminderPanelLayout.setHorizontalGroup(
+            ReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReminderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PanelTugas1Remind, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelTugasRemind2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReminderPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(HeadReminder)
+                    .addGroup(ReminderPanelLayout.createSequentialGroup()
+                        .addComponent(TanggalStart)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(PenghubungTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TanggalEnd)))
+                .addGap(104, 104, 104))
+        );
+        ReminderPanelLayout.setVerticalGroup(
+            ReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReminderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(HeadReminder)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TanggalEnd)
+                    .addComponent(TanggalStart)
+                    .addComponent(PenghubungTanggal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelTugasRemind2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelTugas1Remind, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -178,6 +299,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TugasHariIni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ReminderPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(StatistikPanelUtama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -185,13 +307,15 @@ public class Dashboard extends javax.swing.JFrame {
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
                 .addComponent(PanelAtas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TugasHariIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ReminderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(StatistikPanelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124))
+                .addGap(113, 113, 113))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,31 +356,43 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardsTrial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardsTrial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardsTrial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardsTrial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard().setVisible(true);
+                new DashboardsTrial().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HeadJudulStatistik;
+    private javax.swing.JLabel HeadReminder;
     private javax.swing.JLabel HeadTugasHariIni;
+    private javax.swing.JLabel JudulTugasRemind1;
+    private javax.swing.JLabel JudulTugasRemind2;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel PanelAtas;
     private javax.swing.JPanel PanelAtas1;
+    private java.awt.Panel PanelTugas1Remind;
+    private java.awt.Panel PanelTugasRemind2;
+    private javax.swing.JLabel PenghubungTanggal;
+    private javax.swing.JPanel ReminderPanel;
     private javax.swing.JPanel StatistikPanelUtama;
+    private javax.swing.JLabel TanggalEnd;
     private javax.swing.JLabel TanggalHariIni;
+    private javax.swing.JLabel TanggalStart;
+    private javax.swing.JLabel TanggalWaktuDeadlineRemind2;
+    private javax.swing.JLabel TanggalWaktuDeadlineTugasRemind1;
     private javax.swing.JPanel TugasHariIni;
     private javax.swing.JScrollPane jScrollPane1;
     private Instance.Navbar navbar1;

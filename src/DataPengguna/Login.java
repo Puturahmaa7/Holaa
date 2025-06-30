@@ -6,6 +6,7 @@ import Database.CRUDUserInfo;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import pomofocus.Dashboard;
+import pomofocus.DashboardsTrial;
 
 public class Login extends javax.swing.JFrame {
 
@@ -13,6 +14,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         sVGIcon1.setSVGIcon("SVGIcon/LogoPomo.svg", 130, 130);
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -283,6 +285,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_button2ActionPerformed
 
     private void JudulTugas4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JudulTugas4MouseClicked
+        Session.previousPage = "login";
         new Verifikasi().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_JudulTugas4MouseClicked

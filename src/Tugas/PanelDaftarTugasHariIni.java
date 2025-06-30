@@ -10,10 +10,10 @@ import java.util.List;
 
 public class PanelDaftarTugasHariIni extends JPanel {
     public PanelDaftarTugasHariIni() {
-        setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+        setLayout(new FlowLayout(FlowLayout.LEFT, 2, 2));
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBackground(new Color(248, 244, 225));
-        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        setBackground(new Color(250,227,143));
+        setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
         loadData();
     }
 
@@ -23,10 +23,10 @@ public class PanelDaftarTugasHariIni extends JPanel {
         try {
             int idPengguna = Session.currentUser.getUserID(); // ambil ID user login
             CRUDTugas crud = CRUDTugas.getInstance();
-            List<TugasGetSet> daftarTugas = crud.ambilTugasHariIni(idPengguna);
+            List<TugasGetSet> daftarTugasHariIni = crud.ambilTugasHariIni(idPengguna);
 
-            for (TugasGetSet tugas : daftarTugas) {
-                DaftarTugas tugasPanel = new DaftarTugas(
+            for (TugasGetSet tugas : daftarTugasHariIni) {
+                DaftarTugasHariIni tugasPanel = new DaftarTugasHariIni(
                     tugas.getIdTugas(),
                     tugas.getNamaTugas(),
                     tugas.getTanggalDeadline(),

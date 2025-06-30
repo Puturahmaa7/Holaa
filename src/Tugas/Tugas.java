@@ -10,8 +10,10 @@ public class Tugas extends javax.swing.JFrame {
         PanelDaftarTugas daftarPanel = new PanelDaftarTugas();
         jScrollPane1.setViewportView(daftarPanel);
         sVGIcon11.setSVGIcon("SVGIcon/NewAddTugas.svg", 50, 50);
-
+        Session.previousPage = "tugas";
     }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
